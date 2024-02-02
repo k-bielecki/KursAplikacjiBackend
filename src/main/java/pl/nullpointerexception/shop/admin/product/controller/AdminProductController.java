@@ -1,5 +1,6 @@
 package pl.nullpointerexception.shop.admin.product.controller;
 
+import com.github.slugify.Slugify;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.FileSystemResourceLoader;
@@ -68,8 +69,6 @@ public class AdminProductController {
         } catch (IOException e) {
             throw new RuntimeException("Coś poszło źle podczas wgrwania pliku", e);
         }
-
-
     }
 
     @GetMapping("/data/productImage/{filename}")
@@ -89,6 +88,14 @@ public class AdminProductController {
                 .price(adminProductDto.getPrice())
                 .currency(adminProductDto.getCurrency())
                 .image(adminProductDto.getImage())
+                .slug(slugifySlug(adminProductDto.getSlug()))
                 .build();
+    }
+
+    private static String slugifySlug(String slug) {
+        Slugify slugify = Slugify.builder()
+                .customReplacement("_", "-")
+                .build();
+        return slugify.slugify(slug);
     }
 }

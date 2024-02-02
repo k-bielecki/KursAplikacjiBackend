@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import pl.nullpointerexception.shop.product.model.Product;
 import pl.nullpointerexception.shop.product.repository.ProductRepository;
 
@@ -16,5 +17,9 @@ public class ProductService {
 
     public Page<Product> getProducts(Pageable pageable) {
         return productRepository.findAll(pageable);
+    }
+
+    public Product getProduct(String slug) {
+        return productRepository.findBySlug(slug).orElseThrow();
     }
 }
