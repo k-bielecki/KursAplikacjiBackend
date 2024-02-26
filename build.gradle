@@ -31,6 +31,7 @@ dependencies {
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'commons-io:commons-io:2.15.1'
+	implementation 'org.jsoup:jsoup:1.17.2'
 }
 
 tasks.named('test') {
