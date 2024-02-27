@@ -1,10 +1,9 @@
-package pl.nullpointerexception.shop.product.model;
+package pl.nullpointerexception.shop.common.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import pl.nullpointerexception.shop.review.model.Review;
 
 import java.math.BigDecimal;
 import java.util.List;

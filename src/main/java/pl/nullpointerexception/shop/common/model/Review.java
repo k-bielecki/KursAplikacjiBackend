@@ -1,4 +1,4 @@
-package pl.nullpointerexception.shop.review.model;
+package pl.nullpointerexception.shop.common.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

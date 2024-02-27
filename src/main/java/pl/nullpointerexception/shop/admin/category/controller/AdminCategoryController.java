@@ -9,6 +9,8 @@ import pl.nullpointerexception.shop.admin.category.service.AdminCategoryService;
 
 import java.util.List;
 
+import static pl.nullpointerexception.shop.admin.common.utils.SlugifyUtils.slugifySlug;
+
 @RestController
 @RequestMapping("admin/categories")
 @RequiredArgsConstructor
@@ -53,7 +55,7 @@ public class AdminCategoryController {
                 .id(id)
                 .name(adminCategoryDto.getName())
                 .description(adminCategoryDto.getDescription())
-                .slug(slugifyCategoryName(adminCategoryDto.getSlug()))
+                .slug(slugifySlug(adminCategoryDto.getSlug()))
                 .build();
     }
 }

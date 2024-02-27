@@ -1,9 +1,9 @@
-package pl.nullpointerexception.shop.admin.product.service;
+package pl.nullpointerexception.shop.admin.common.utils;
 
 import com.github.slugify.Slugify;
 import org.apache.commons.io.FilenameUtils;
 
-class UploadedFilesNameUtils {
+public class SlugifyUtils {
     public static String slugifyFileName(String filename) {
         String name = FilenameUtils.getBaseName(filename);
 
@@ -13,5 +13,12 @@ class UploadedFilesNameUtils {
         String changedName = slg.slugify(name);
 
         return changedName + "." + FilenameUtils.getExtension(filename);
+    }
+
+    public static String slugifySlug(String slug) {
+        Slugify slugify = Slugify.builder()
+                .customReplacement("_", "-")
+                .build();
+        return slugify.slugify(slug);
     }
 }

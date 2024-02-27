@@ -1,20 +1,17 @@
 package pl.nullpointerexception.shop.product.controller;
 
 import jakarta.validation.constraints.Pattern;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pl.nullpointerexception.shop.product.controller.dto.ProductListDto;
-import pl.nullpointerexception.shop.product.model.Product;
+import pl.nullpointerexception.shop.common.dto.ProductListDto;
+import pl.nullpointerexception.shop.common.model.Product;
 import pl.nullpointerexception.shop.product.service.ProductService;
 
 import java.util.List;

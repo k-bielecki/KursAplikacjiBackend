@@ -24,6 +24,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import static pl.nullpointerexception.shop.admin.common.utils.SlugifyUtils.slugifySlug;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -91,12 +93,5 @@ public class AdminProductController {
                 .image(adminProductDto.getImage())
                 .slug(slugifySlug(adminProductDto.getSlug()))
                 .build();
-    }
-
-    private static String slugifySlug(String slug) {
-        Slugify slugify = Slugify.builder()
-                .customReplacement("_", "-")
-                .build();
-        return slugify.slugify(slug);
     }
 }
