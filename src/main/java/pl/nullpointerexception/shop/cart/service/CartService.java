@@ -10,6 +10,7 @@ import pl.nullpointerexception.shop.common.repository.CartRepository;
 import pl.nullpointerexception.shop.common.model.Product;
 import pl.nullpointerexception.shop.common.repository.ProductRepository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static java.time.LocalDateTime.*;
